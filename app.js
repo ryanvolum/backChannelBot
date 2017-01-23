@@ -19,26 +19,26 @@ bot.dialog('/', [
 
 bot.dialog('/changeBackground', [
     function (session, args) {
-        if (args && args.entities && args.entities[0])
+        if (args && args.entities && args.entities[0]){
+            /*
             var msg = {
                 "type": "event",
                 "text": "You wanted to change the background to " + args.entities[0].entity,
                 "from": {
-                    "id": "default-bot",
+                    "id": session.message.address.bot.id,
                     "name": "Bot"
                 },
                 "recipient": {
-                    "id": "default-user"
+                    "id": session.message.user.id
                 },
-                "replyToId": "3e1fc2dbfa5kg41mgc",
-                "id": "db99g359e2135e9agc",
-                "channelId": "emulator",
-                "timestamp": "2017-01-20T21:50:18.033Z",
+                "channelId": session.message.address.bot.channelId,
                 "conversation": {
-                    "id": "6kl699755l6agl27gc"
+                    "id": session.message.address.conversation.id
                 }
             }
-        session.endDialog(msg);
+            */
+        }
+        session.endDialog("You wanted to change your background to " + args.entities[0].entity);
     }
 ]);
 
