@@ -10,7 +10,7 @@ bot.on("event", function (event) {
     bot.send(msg);
 })
 
-//Basic dialog which takes an inputted color sends a changeBackground event. No NLP, regex, validation here - just grabs input and sends it back as an event. 
+//Basic root dialog which takes an inputted color and sends a changeBackground event. No NLP, regex, validation here - just grabs input and sends it back as an event. 
 bot.dialog('/', [
     function (session) {
         var reply = createEvent("changeBackground", session.message.text, session.message.address);
