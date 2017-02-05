@@ -3,9 +3,9 @@ require('./connectorSetup.js')();
 //Bot listening for inbound backchannel events - in this case it only listens for events named "buttonClicked"
 bot.on("event", function (event) {
     var msg = new builder.Message().address(event.address);
-    msg.data.textLocale = "en-us";
+    msg.textLocale("en-us");
     if (event.name === "buttonClicked") {
-        msg.data.text = "I see that you just pushed that button";
+        msg.text("I see that you just pushed that button");
     }
     bot.send(msg);
 })
